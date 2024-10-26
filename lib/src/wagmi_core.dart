@@ -25,6 +25,7 @@ import 'package:wagmi_flutter_web/src/actions/read_contracts.dart';
 import 'package:wagmi_flutter_web/src/actions/reconnect.dart';
 import 'package:wagmi_flutter_web/src/actions/send_transaction.dart';
 import 'package:wagmi_flutter_web/src/actions/sign_message.dart';
+import 'package:wagmi_flutter_web/src/actions/sign_typed_data.dart';
 import 'package:wagmi_flutter_web/src/actions/switch_account.dart';
 import 'package:wagmi_flutter_web/src/actions/switch_chain.dart';
 import 'package:wagmi_flutter_web/src/actions/verify_message.dart';
@@ -145,6 +146,20 @@ class Core {
             .signMessage(
               configKey.toJS,
               signMessageParameters.toJS,
+            )
+            .toDart;
+        return result.toDart;
+      });
+
+  static Future<String> signTypedData(
+    SignTypedDataParameters signTypedDataParameters, {
+    String configKey = 'default',
+  }) =>
+      _guardFuture(() async {
+        final result = await window.wagmiCore
+            .signTypedData(
+              configKey.toJS,
+              signTypedDataParameters.toJS,
             )
             .toDart;
         return result.toDart;

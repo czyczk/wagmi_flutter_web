@@ -23,6 +23,7 @@ import {
     ReadContractsParameters,
     SendTransactionParameters,
     SignMessageParameters,
+    SignTypedDataParameters,
     SwitchAccountParameters,
     SwitchChainParameters,
     VerifyMessageParameters,
@@ -61,6 +62,7 @@ import {
     readContracts,
     sendTransaction,
     signMessage,
+    signTypedData,
     switchAccount,
     switchChain,
     verifyMessage,
@@ -185,6 +187,27 @@ export class JSWagmiCore {
                 return null
             }
             return signMessage(
+                this.getConfig(configKey),
+                params
+            )
+        }
+    )
+
+    signTypedData = this.#guard(
+        async (configKey: string, params: SignTypedDataParameters) => {
+            if (!params.message) {
+                console.error("No message provided")
+                return null
+            }
+            if (!params.primaryType) {
+                console.error("No primaryType provided")
+                return null
+            }
+            if (!params.types) {
+                console.error("No types provided")
+                return null
+            }
+            return signTypedData(
                 this.getConfig(configKey),
                 params
             )

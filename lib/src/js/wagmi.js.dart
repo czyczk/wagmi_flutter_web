@@ -32,6 +32,7 @@ part 'actions/read_contract.js.dart';
 part 'actions/read_contracts.js.dart';
 part 'actions/send_transaction.js.dart';
 part 'actions/sign_message.js.dart';
+part 'actions/sign_typed_data.js.dart';
 part 'actions/switch_account.js.dart';
 part 'actions/switch_chain.js.dart';
 part 'actions/verify_message.js.dart';

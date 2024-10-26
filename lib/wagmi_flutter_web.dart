@@ -29,6 +29,7 @@ export 'src/actions/read_contracts.dart';
 export 'src/actions/reconnect.dart';
 export 'src/actions/send_transaction.dart';
 export 'src/actions/sign_message.dart';
+export 'src/actions/sign_typed_data.dart';
 export 'src/actions/switch_account.dart';
 export 'src/actions/switch_chain.dart';
 export 'src/actions/verify_message.dart';

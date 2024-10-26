@@ -30,6 +30,10 @@ extension type JSWagmiCore(JSObject _) implements JSObject {
     JSString configKey,
     JSSignMessageParameters signMessageParameters,
   );
+  external JSPromise<JSSignTypedDataReturnType> signTypedData(
+    JSString configKey,
+    JSSignTypedDataParameters signTypedDataParameters,
+  );
   external JSPromise<JSAny> readContract(
     JSString configKey,
     JSReadContractParameters readContractParameters,
